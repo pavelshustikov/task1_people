@@ -40,9 +40,11 @@ public class Person {
         return surname;
     }
 
-    OptionalInt getAge() {
+    public OptionalInt getAge() {
+        if ( age < 0) {
+            return OptionalInt.empty();
+        }
         return OptionalInt.of(age);
-
     }
 
     String getAddress() {
